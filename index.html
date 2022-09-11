@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Senhas</title>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
 
-  <link rel="stylesheet" href="src/css/reset.css">
-  <link rel="stylesheet" href="src/css/style.css">
-</head>
-<body>
-  
-  <script src="src/js/script.js" type="text/javascript"></script>
-</body>
+    <link rel="stylesheet" href="src/css/reset.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <form id="form">
+      <header class="header-form">
+        <h1>Gerador de Senhas</h1>
+      </header>
+
+      <p class="text-tamanho">Tamanho:</p>
+
+      <button id="btn-diminuir">-</button>
+      <span id="area-tamanho">8 </span>
+      <button id="btn-aumentar">+</button>
+
+      <div class="underline"></div>
+
+      <p class="text-opcoes">Opções:</p>
+
+      <div class="checkbox-container">
+        <input type="checkbox" name="opcoes" id="letra-maiuscula" />
+        <label for="letra-maiuscula">Letra maiúscula</label>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" name="opcoes" id="letra-minuscula" />
+        <label for="letra-minuscula">Letra minuscula</label>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" name="opcoes" id="numeros" />
+        <label for="numeros">Números</label>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" name="opcoes" id="simbolos" />
+        <label for="simbolos">Símbolos</label>
+      </div>
+
+      <button type="submit" id="btn-gerar">Gerar</button>
+
+      <div class="underline"></div>
+
+      <div class="container-senha-gerada">
+        <input type="text" name="senha-gerada" id="senha-gerada" />
+        <button id="btn-copiar"><i class="fa-regular fa-copy"></i></button>
+      </div>
+    </form>
+
+    <script
+      src="https://kit.fontawesome.com/9b848f4de4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/js/script.js" type="text/javascript"></script>
+  </body>
 </html>
