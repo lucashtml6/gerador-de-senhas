@@ -15,10 +15,16 @@
         <h1>Gerador de Senhas</h1>
       </header>
 
-      
       <div class="container-tamanho">
         <p class="text-tamanho">Tamanho:</p>
-        <input type="number" name="tamanho" id="tamanho" value="8" min="8" max="50">
+        <input
+          type="number"
+          name="tamanho"
+          id="tamanho"
+          value="8"
+          min="8"
+          max="50"
+        />
       </div>
 
       <div class="underline"></div>
@@ -26,27 +32,40 @@
       <p class="text-opcoes">Opções:</p>
 
       <div class="checkbox-container">
-        <input type="checkbox" name="opcoes" id="letra-maiuscula" />
+        <input
+          type="checkbox"
+          name="opcoes"
+          id="letra-maiuscula"
+          class="opcoes"
+        />
         <label for="letra-maiuscula">Letra maiúscula</label>
       </div>
 
       <div class="checkbox-container">
-        <input type="checkbox" name="opcoes" id="letra-minuscula" />
+        <input
+          type="checkbox"
+          name="opcoes"
+          id="letra-minuscula"
+          class="opcoes"
+        />
         <label for="letra-minuscula">Letra minúscula</label>
       </div>
 
       <div class="checkbox-container">
-        <input type="checkbox" name="opcoes" id="numeros" />
+        <input type="checkbox" name="opcoes" id="numeros" class="opcoes" />
         <label for="numeros">Números</label>
       </div>
 
       <div class="checkbox-container">
-        <input type="checkbox" name="opcoes" id="simbolos" />
+        <input type="checkbox" name="opcoes" id="simbolos" class="opcoes" />
         <label for="simbolos">Símbolos</label>
       </div>
 
-      <button type="submit" id="btn-gerar">Gerar</button>
+      <small class="hidden" id="mensagem-de-erro"
+        >Selecione pelo menos algum item acima</small
+      >
 
+      <button type="submit" id="btn-gerar">Gerar</button>
 
       <div class="container-senha-gerada">
         <input type="text" name="senha-gerada" id="senha-gerada" />

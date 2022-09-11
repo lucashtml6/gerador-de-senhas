@@ -118,3 +118,12 @@ body {
   height: 35px;
   border-radius: 5px;
 }
+
+#form #mensagem-de-erro {
+  color: red;
+  font-size: 1rem;
+}
+
+#form #mensagem-de-erro.hidden {
+  visibility: hidden;
+}
