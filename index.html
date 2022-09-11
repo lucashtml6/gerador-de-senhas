@@ -15,11 +15,11 @@
         <h1>Gerador de Senhas</h1>
       </header>
 
-      <p class="text-tamanho">Tamanho:</p>
-
-      <button id="btn-diminuir">-</button>
-      <span id="area-tamanho">8 </span>
-      <button id="btn-aumentar">+</button>
+      
+      <div class="container-tamanho">
+        <p class="text-tamanho">Tamanho:</p>
+        <input type="number" name="tamanho" id="tamanho" value="8" min="8" max="50">
+      </div>
 
       <div class="underline"></div>
 
@@ -32,7 +32,7 @@
 
       <div class="checkbox-container">
         <input type="checkbox" name="opcoes" id="letra-minuscula" />
-        <label for="letra-minuscula">Letra minuscula</label>
+        <label for="letra-minuscula">Letra minúscula</label>
       </div>
 
       <div class="checkbox-container">
@@ -47,7 +47,6 @@
 
       <button type="submit" id="btn-gerar">Gerar</button>
 
-      <div class="underline"></div>
 
       <div class="container-senha-gerada">
         <input type="text" name="senha-gerada" id="senha-gerada" />
