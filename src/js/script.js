@@ -26,6 +26,11 @@ const verificarOpcoesMarcadas = (opcoes) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // se o tamanho estiver vazio
+  if (inputTamanho.value === "") {
+    inputTamanho.value = "8";
+  }
+
   if (verificarOpcoesMarcadas(opcoes)) {
     mensagemDeErro.classList.remove("hidden");
     inputSenhaGerada.value = "";
@@ -33,6 +38,4 @@ form.addEventListener("submit", (e) => {
     mensagemDeErro.classList.add("hidden");
     inputSenhaGerada.value = "senha";
   }
-
-  
 });
