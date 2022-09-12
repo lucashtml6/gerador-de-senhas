@@ -117,13 +117,34 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+#form .container-senha-gerada > button:active {
+  box-shadow: none;
+  transform: translateY(2px);
 }
 
 #form #mensagem-de-erro {
-  color: red;
+  color: #ff0000;
   font-size: 1rem;
 }
 
 #form #mensagem-de-erro.hidden {
   visibility: hidden;
+}
+
+#form #msg-copiar-senha {
+  font-size:  1rem;
+  visibility: hidden;
+}
+
+#form #msg-copiar-senha.copiada {
+  color: #008000;
+  visibility: visible;
+}
+
+#form #msg-copiar-senha.erro {
+  color: #ff0000;
+  visibility: visible;
 }

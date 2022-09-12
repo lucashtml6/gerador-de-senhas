@@ -4,6 +4,8 @@ const inputTamanho = document.getElementById("tamanho");
 const opcoes = document.querySelectorAll(".opcoes");
 const inputSenhaGerada = document.getElementById("senha-gerada");
 const mensagemDeErro = document.getElementById("mensagem-de-erro");
+const btnCopiar = document.getElementById("btn-copiar");
+const msgSenhaCopiada = document.getElementById("msg-copiar-senha");
 
 const letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
 const letrasMaiusculas = letrasMinusculas.toUpperCase();
@@ -41,13 +43,17 @@ form.addEventListener("submit", (e) => {
     if (opcoes[0].checked) {
       // maiúsculas
       for (var i = 0; i < 26; i++) {
-        caracteresAleatorios += letrasMaiusculas.charAt(Math.floor(Math.random() * 26));
+        caracteresAleatorios += letrasMaiusculas.charAt(
+          Math.floor(Math.random() * 26)
+        );
       }
     }
     if (opcoes[1].checked) {
       // minúsculas
       for (var i = 0; i < 26; i++) {
-        caracteresAleatorios += letrasMinusculas.charAt(Math.floor(Math.random() * 26));
+        caracteresAleatorios += letrasMinusculas.charAt(
+          Math.floor(Math.random() * 26)
+        );
       }
     }
     if (opcoes[2].checked) {
@@ -65,9 +71,26 @@ form.addEventListener("submit", (e) => {
 
     let senha = "";
 
-    for(var i=0; i < caracteresAleatorios.length; i++) {
-      senha += caracteresAleatorios.charAt(Math.floor(Math.random() * caracteresAleatorios.length));
+    for (var i = 0; i < caracteresAleatorios.length; i++) {
+      senha += caracteresAleatorios.charAt(
+        Math.floor(Math.random() * caracteresAleatorios.length)
+      );
     }
     inputSenhaGerada.value = senha.slice(0, inputTamanho.value);
   }
 });
+
+btnCopiar.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if(inputSenhaGerada.value === "") {
+    msgSenhaCopiada.innerText = "Não há nada para copiar :(";
+    msgSenhaCopiada.classList.remove("copiada");
+    msgSenhaCopiada.classList.add("erro");
+  } else {
+    navigator.clipboard.writeText(inputSenhaGerada.value);
+    msgSenhaCopiada.innerText = "Senha copiada com sucesso!";
+    msgSenhaCopiada.classList.remove("erro");
+    msgSenhaCopiada.classList.add("copiada");
+  }
+})
